@@ -1,0 +1,32 @@
+-----------Run Cordapp nodes---------------------
+
+./gradlew clean deployNodes
+
+build/nodes/runnodes
+build/nodes/runnodes.bat  [Windows]
+
+--------------------- execute Flows  ------------------
+
+------------run in terminal of mint node------------------------------
+
+Issue Flows - To Trader A
+
+start IssueMetal metalName: Gold, weight: 10, owner: "O=TraderA,L=New York,C=US"
+
+Issue Flows - To Trader B
+
+start IssueMetal metalName: Gold, weight: 20, owner: "O=TraderB,L=New York,C=US"
+
+------------run in terminal of Trader A node------------------------------
+
+Transfer Flows
+
+start TransferMetal metalName: Gold, weight: 10, newOwner: "O=TraderB,L=New York,C=US"
+
+------------run in terminal of Trader B node----------------------
+
+Searching Vault
+
+start SearchVault
+
+run vaultQuery contractStateType: com.template.states.MetalState
